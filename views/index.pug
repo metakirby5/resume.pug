@@ -1,8 +1,22 @@
 include base
 title= name
 
-h1= name
+header.top
+  h1.title= name
+  ul.links
+    each link in links
+      li: a(href=link.prefix + link.text) #{link.text}
 
-ul
-  each link in links
-    li: a(href=link.prefix + link.text) #{link.text}
+blockquote= tagline
+
+h2 Experience
+
+each item in experience
+  figure
+    figcaption #{item.name} | #{item.role}
+    div
+      img.figure-img(style='background-image: url(' + item.image + ')')
+      hr
+      ul
+        each text in item.content
+          li= text
