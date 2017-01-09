@@ -1,0 +1,21 @@
+{
+  "name": "resume.pug",
+  "version": "1.0.0",
+  "description": "A pug version of my YAML-based resume.",
+  "main": "bin/www",
+  "scripts": {
+    "start": "bin/www"
+  },
+  "repository": "https://github.com/metakirby5/resume.pug.git",
+  "author": "Ethan Chan <metakirby5@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "coffee-script": "^1.12.2",
+    "express": "^4.14.0",
+    "js-yaml": "^3.7.0",
+    "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6",
+    "yorha": "^1.1.0"
+  }
+}
