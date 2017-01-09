@@ -9,9 +9,22 @@ print()
   @media print
     {block}
 
+.noprint
+  +print()
+    display none
+
++print()
+  for $n in (1..6)
+    h{$n}
+      font-size (1.5 - + $n / 12) em
+      margin 0.5em 0
+  blockquote
+    margin-top 0.5em
+    margin-bottom 0.5em
+
 .top
   display flex
-  flex-flow row
+  flex-flow row nowrap
   align-items center
   +monitor()
     flex-flow column
@@ -28,6 +41,7 @@ print()
   margin 0
   padding 0
   list-style-type none
+  text-align center
   > li
     display inline
     &:after
@@ -35,9 +49,45 @@ print()
     &:last-of-type:after
       content ''
 
-.figure-img
-  height 10rem
-  width 100%
-  background-color $c-weak
-  background-size cover
-  background-position center
+$grid-padding = 1rem
+.figure-grid
+  display flex
+  flex-flow row wrap
+  justify-content space-between
+  align-items stretch
+  margin (- $grid-padding / 2)
+  +print()
+    margin 0
+    flex-flow column nowrap
+  > figure
+    flex 2 2 20rem
+    margin ($grid-padding / 2)
+    +print()
+      margin 0
+      padding 0
+      flex auto
+    > figcaption
+      +print()
+        margin 0
+        padding 0
+        font-size 1em
+    > .figure-content
+      +print()
+        margin 0
+      > img
+        height 15rem
+        width 100%
+        background-color $c-weak
+        background-size cover
+        background-position center
+        +print()
+          display none
+      > hr
+        +print()
+          display none
+      > ul
+        +print()
+          margin 0
+          padding 0
+          padding-left 1.5em
+          font-size 0.85em
