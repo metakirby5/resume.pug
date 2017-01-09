@@ -1,3 +1,8 @@
 include base
 title= name
+
 h1= name
+
+ul
+  each link in links
+    li: a(href=link.prefix + link.text) #{link.text}
