@@ -7,11 +7,11 @@ morgan = require 'morgan'
 path = require 'path'
 yaml = require 'js-yaml'
 
-NODE_MODULES = path.join __dirname, '..', 'node_modules'
-YORHA = path.join NODE_MODULES, 'yorha', 'dist', 'yorha.min.css'
+getPath = (args...) -> path.join __dirname, args...
+YORHA = getPath 'node_modules', 'yorha', 'dist', 'yorha.min.css'
 YORHA_CSS = fs.readFileSync YORHA, 'utf8'  # Cacheable
-DATA = path.join __dirname, '..', 'data', 'data.yaml'
-IMG = path.join __dirname, '..', 'img'
+DATA = getPath 'data', 'data.yaml'
+IMG = getPath 'img'
 
 server = express()
 

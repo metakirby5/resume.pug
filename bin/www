@@ -2,7 +2,7 @@
 // The main server executable. You shouldn't touch this.
 require('coffee-script/register');
 
-const server = require('../src');
+const server = require('../server');
 const port = process.env.PORT || 3000;
 
 server.listen(port, _ => {
